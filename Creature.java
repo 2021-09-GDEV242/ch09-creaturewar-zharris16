@@ -7,15 +7,15 @@
  * the creature is alive or knocked out. The creature is also responsible for calculating
  * damage delivered based on the creature's strength (1 to str) 
  * 
- * @author Crosbie
+ * @author Zach Harris
  * @version 2020-10 v1.0
  */
 // we will learn what the abstract keyword does in a later chapter
 public abstract class Creature
 {
-    private int str;        // The strength of this creature
+    protected int str;        // The strength of this creature
     private int max_hp;     // The maximum hit points the creature can have (used if healing enabled)
-    private int hp;         // the current numberof hit points the creature has
+    private int hp;// the current numberof hit points the creature has
     
     /**
      * default constructor - this should never actually run.
@@ -26,6 +26,7 @@ public abstract class Creature
         str=10;
         hp=10;
         max_hp = hp;
+        
     }
     
     /**
@@ -37,7 +38,10 @@ public abstract class Creature
      * @param hp the health of the creature at the start of the simulation, and the current health levels during battle
      */
     public Creature (int str, int hp) {
-       //implement this
+       this.str = str;
+       this.hp = hp;
+       this.max_hp = hp;
+       
     }
     
     
@@ -46,10 +50,13 @@ public abstract class Creature
      * @return a value between 1 and str to be used to cause damage to another creature
      */
     public int attack(){
-        // TODO: implement a damage method
-        return 0;
+        return damage();
     }
     
+    public int damage(){
+        int damage = Randomizer.nextInt(str) + 1;
+        return damage;
+    }
     
     /**
      * Is this creature still capable of fighting?
@@ -57,7 +64,13 @@ public abstract class Creature
      */
     public boolean isAlive() {
         // TODO: implement a method to report if the creature yet lives
-        return false; //change this
+        boolean status;
+        if(hp <= 0){
+            status = false;
+        }else{
+            status = true;
+        }
+        return status;
     }
     
     /**
@@ -66,7 +79,15 @@ public abstract class Creature
      */
     public boolean isKnockedOut() {
         //TODO: implement a method to report if the creature has been killed
-        return false; //change this
+        boolean knockStatus;
+        if(hp <= 0){
+            knockStatus = true;
+            System.out.println("Knocked Out!");
+        }else{
+            knockStatus = false;
+            System.out.println("Still In The Fighting!");
+        }
+        return knockStatus;
     }
     
     
@@ -77,6 +98,15 @@ public abstract class Creature
      */
     public void takeDamage(int damage) {
         // TODO: implement this
+        hp =- damage;
+    }
+    
+    /**
+     * This method returns the current health of a creature.
+     * @return hp - current health of creature.
+     */
+    public int getHealth(){
+        return hp;
     }
     
 }
