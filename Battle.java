@@ -16,6 +16,8 @@ public class Battle
     private Elf elf;
     private CyberDemon cyberdemon;
     private Balrog balrog;
+    private Battle popGood;
+    private Battle popEvil;
     
     /**
      * Constructor for objects of class Battle
@@ -23,6 +25,9 @@ public class Battle
     public Battle()
     {
         // initialise instance variables
+        popGood = new Battle();
+        popEvil = new Battle();
+        
         goodArmy = new ArrayList<Creature>();
         evilArmy = new ArrayList<Creature>();
         
@@ -32,8 +37,10 @@ public class Battle
         balrog = new Balrog();
     }
     
-    public static void main(String args[]){
-        
+    public void main(String args[]){
+        populateGoodArmy();
+        populateEvilArmy();
+    
     }
     
     public void populateGoodArmy(){
