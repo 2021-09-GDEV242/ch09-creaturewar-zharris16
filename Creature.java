@@ -53,7 +53,7 @@ public abstract class Creature
         return damage();
     }
     
-    public int damage(){
+    protected int damage(){
         int damage = Randomizer.nextInt(str) + 1;
         return damage;
     }
@@ -82,10 +82,8 @@ public abstract class Creature
         boolean knockStatus;
         if(hp <= 0){
             knockStatus = true;
-            System.out.println("Knocked Out!");
         }else{
             knockStatus = false;
-            System.out.println("Still In The Fighting!");
         }
         return knockStatus;
     }
