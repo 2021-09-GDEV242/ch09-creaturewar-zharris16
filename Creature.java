@@ -53,6 +53,10 @@ public abstract class Creature
         return damage();
     }
     
+    /**
+     * This method calulates the damage to be caused by a creature.
+     * @return damage
+     */
     protected int damage(){
         int damage = Randomizer.nextInt(str) + 1;
         return damage;
@@ -96,7 +100,7 @@ public abstract class Creature
      */
     public void takeDamage(int damage) {
         // TODO: implement this
-        hp =- damage;
+        hp = hp - damage;
     }
     
     /**

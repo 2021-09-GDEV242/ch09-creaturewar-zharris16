@@ -1,13 +1,12 @@
 
 /**
- * Write a description of class Demon here.
+ * This class stores all attributes of Demon of type Creature.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Zachary Harris
+ * @version 11/15/21
  */
 public class Demon extends Creature
 {
-    // instance variables - replace the example below with your own
     
 
     /**
@@ -22,13 +21,11 @@ public class Demon extends Creature
      * Allows a creature to determine how much damage it is causing in this round of battle
      * @return a value between 1 and str to be used to cause damage to another creature
      */
-    
-    
-    public int attack(){
+    public int damage(){
         
         int outputDmg = Randomizer.nextInt(str);
         if(((Randomizer.nextInt(100) + 1) >= 1) && ((Randomizer.nextInt(100) + 1) <= 5)){
-            outputDmg = outputDmg * 2;
+            outputDmg = outputDmg + 50;
         }
         
         return outputDmg;

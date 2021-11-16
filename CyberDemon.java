@@ -1,9 +1,9 @@
 
 /**
- * Write a description of class CyberDemon here.
+ * This class stores all attributes of CyberDemon of type Creature.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Zachary Harris
+ * @version 11/15/21
  */
 public class CyberDemon extends Demon
 {

@@ -5,13 +5,12 @@ import java.util.Random;
  * from the range 0..limit -1
  * to the range 1..limit
  * 
- * @author Bill Crosbie
- * @version 2020-10 v1.0
+ * @author Zachary Harris
+ * @version 11/15/21
  */
 public class Randomizer
 {
     private static Random rand;
-
 
     /**
      * nextInt is a static method designed to return a random number between 1 and maxValue, inclusive
@@ -27,10 +26,11 @@ public class Randomizer
      */
     public static int nextInt(int maxValue)
     {
+
         if (rand == null) {
             rand = new Random();
+
         }
-        
         return rand.nextInt(maxValue)+1;
     }
 }

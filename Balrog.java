@@ -1,17 +1,17 @@
 
 /**
- * Write a description of class Balrog here.
+ * This class stores all attributes of Balrog of type Creature.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Zachary Harris
+ * @version 11/15/21
  */
 public class Balrog extends Demon
 {
     // instance variables - replace the example below with your own
-    private static final int MAX_BALROG_HP = 30;
-    private static final int MIN_BALROG_HP = 10;
-    private static final int MAX_BALROG_STR = 18;
-    private static final int MIN_BALROG_STR = 5;
+    private static final int MAX_BALROG_HP = 200;
+    private static final int MIN_BALROG_HP = 80;
+    private static final int MAX_BALROG_STR = 100;
+    private static final int MIN_BALROG_STR = 50;
 
     /**
      * Constructor for objects of class Balrog
@@ -23,6 +23,9 @@ public class Balrog extends Demon
         );
     }
     
+    /**
+     * This method doubles the Balrogs outputed damage
+     */
     public int damage(){
         
         int outputDmg = Randomizer.nextInt(str);

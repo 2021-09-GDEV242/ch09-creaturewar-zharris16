@@ -1,9 +1,9 @@
 
 /**
- * Write a description of class Elf here.
+ * This class stores all attributes of Elf of type Creature.
  *
- * @author (your name)
- * @version (a version number or a date)
+ * @author Zachary Harris
+ * @version 11/15/21
  */
 public class Elf extends Creature
 {
@@ -29,7 +29,7 @@ public class Elf extends Creature
      * @return a value between 1 and str to be used to cause damage to another creature
      */
     public int damage(){
-        int outputDmg = super.damage() * 2;
+        int outputDmg = super.damage();
         if(Randomizer.nextInt(10) == 1){
             outputDmg = super.damage() * 2;
         }
